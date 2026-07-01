@@ -1,3 +1,33 @@
 [gd_scene format=3 uid="uid://bwxk6ehjrqy6q"]
 
+[ext_resource type="Texture2D" uid="uid://dcvxd4byj0k2g" path="res://Assets/Textures/Sky.png" id="1_iukft"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_233y1"]
+panorama = ExtResource("1_iukft")
+
+[sub_resource type="Sky" id="Sky_36lxu"]
+sky_material = SubResource("PanoramaSkyMaterial_233y1")
+
+[sub_resource type="Environment" id="Environment_md5vx"]
+background_mode = 2
+sky = SubResource("Sky_36lxu")
+
 [node name="Game" type="Node" unique_id=877371854]
+
+[node name="World" type="Node3D" parent="." unique_id=266502106]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=155047778]
+environment = SubResource("Environment_md5vx")
+
+[node name="Camera3D" type="Camera3D" parent="World" unique_id=1886919256]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1783360616]
+
+[node name="Control" type="Control" parent="UI" unique_id=1083805227]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
