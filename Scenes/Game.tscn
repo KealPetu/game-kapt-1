@@ -1,28 +1,42 @@
 [gd_scene format=3 uid="uid://bwxk6ehjrqy6q"]
 
-[ext_resource type="Texture2D" uid="uid://dcvxd4byj0k2g" path="res://Assets/Textures/Sky.png" id="1_iukft"]
+[ext_resource type="PackedScene" uid="uid://myxgsxqpch8v" path="res://Scenes/Player.tscn" id="1_gl6un"]
+[ext_resource type="Texture2D" uid="uid://dcvxd4byj0k2g" path="res://Assets/Textures/Sky.png" id="1_kldst"]
+[ext_resource type="PackedScene" uid="uid://dqyqk1ioyetxq" path="res://Scenes/Levels/TestLevel.tscn" id="2_j5yw3"]
+[ext_resource type="Script" uid="uid://d0wbrd1vk1yht" path="res://Scripts/UI.gd" id="3_j5yw3"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_233y1"]
-panorama = ExtResource("1_iukft")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b2bpf"]
+panorama = ExtResource("1_kldst")
 
-[sub_resource type="Sky" id="Sky_36lxu"]
-sky_material = SubResource("PanoramaSkyMaterial_233y1")
+[sub_resource type="Sky" id="Sky_kldst"]
+sky_material = SubResource("PanoramaSkyMaterial_b2bpf")
 
-[sub_resource type="Environment" id="Environment_md5vx"]
+[sub_resource type="Environment" id="Environment_j5yw3"]
 background_mode = 2
-sky = SubResource("Sky_36lxu")
+sky = SubResource("Sky_kldst")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kldst"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_b2bpf"]
+font_size = 32
 
 [node name="Game" type="Node" unique_id=877371854]
 
 [node name="World" type="Node3D" parent="." unique_id=266502106]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=155047778]
-environment = SubResource("Environment_md5vx")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1170583918]
+environment = SubResource("Environment_j5yw3")
 
-[node name="Camera3D" type="Camera3D" parent="World" unique_id=1886919256]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+[node name="Player" parent="World" unique_id=423710004 groups=["Player"] instance=ExtResource("1_gl6un")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 1.165, 0)
+
+[node name="LevelHolder" type="Node3D" parent="World" unique_id=1078791797]
+
+[node name="TestLevel" parent="World/LevelHolder" unique_id=583016640 instance=ExtResource("2_j5yw3")]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1783360616]
+script = ExtResource("3_j5yw3")
 
 [node name="Control" type="Control" parent="UI" unique_id=1083805227]
 layout_mode = 3
@@ -31,3 +45,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="FPSLabel" type="Label" parent="UI/Control" unique_id=845893438]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FPS: "
+label_settings = SubResource("LabelSettings_kldst")
+
+[node name="ScoreLabel" type="Label" parent="UI/Control" unique_id=1882656268]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 102.0
+offset_bottom = 93.0
+text = "Score: "
+label_settings = SubResource("LabelSettings_b2bpf")
+
+[node name="FPSUpdaterTimer" type="Timer" parent="UI/Control" unique_id=129926129]

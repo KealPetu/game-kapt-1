@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dqyqk1ioyetxq"]
+
+[ext_resource type="PackedScene" uid="uid://dsbavickrgd64" path="res://Assets/Models/Enviroment/naturePack_014.glb" id="1_1mv4x"]
+[ext_resource type="Script" uid="uid://dn2ajg5242r43" path="res://Scripts/CoinSpawner.gd" id="1_a7u0l"]
+[ext_resource type="PackedScene" uid="uid://bygi8kqhpecn7" path="res://Scenes/Coin.tscn" id="1_ss4xl"]
+[ext_resource type="PackedScene" uid="uid://b8m7p7g443u10" path="res://Assets/Models/Enviroment/naturePack_017.glb" id="2_a7u0l"]
+[ext_resource type="PackedScene" uid="uid://cpxtnppwp6svr" path="res://Assets/Models/Enviroment/naturePack_021.glb" id="3_qhub5"]
+[ext_resource type="PackedScene" uid="uid://euneys0k6kqv" path="res://Assets/Models/Enviroment/naturePack_019.glb" id="4_cuare"]
+[ext_resource type="PackedScene" uid="uid://disafy4br6yr" path="res://Assets/Models/Enviroment/naturePack_022.glb" id="5_a1huo"]
+[ext_resource type="PackedScene" uid="uid://di8nulb5a4cqu" path="res://Assets/Models/Enviroment/naturePack_065.glb" id="6_buhu8"]
+[ext_resource type="PackedScene" uid="uid://2gc443b57113" path="res://Assets/Models/Enviroment/naturePack_066.glb" id="7_jj57x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl6un"]
+albedo_color = Color(0.41960785, 0.23921569, 1, 1)
+
+[node name="TestLevel" type="Node3D" unique_id=583016640]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=272773136]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2073221412]
+size = Vector3(50, 5, 50)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=910950027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(49.5, 4.5, 49.5)
+material = SubResource("StandardMaterial3D_gl6un")
+
+[node name="LightSources" type="Node3D" parent="." unique_id=1589999274]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LightSources" unique_id=707088158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -24)
+omni_range = 25.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="LightSources" unique_id=1252334603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 24)
+omni_range = 25.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="LightSources" unique_id=1675648088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 24)
+omni_range = 25.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="LightSources" unique_id=1429066870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -24)
+omni_range = 25.0
+
+[node name="Coins" type="Node3D" parent="." unique_id=1852524767]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.9999999, 0, 0.9999999, -4.3711385e-08, 0, 0, 4)
+script = ExtResource("1_a7u0l")
+coin_scene = ExtResource("1_ss4xl")
+
+[node name="CoinSpawnTimer" type="Timer" parent="Coins" unique_id=1576227471]
+
+[node name="Enviroment" type="Node3D" parent="." unique_id=913369016]
+
+[node name="naturePack_0142" parent="Enviroment" unique_id=82930965 instance=ExtResource("1_1mv4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.046476, -1.7499981, -16.779076)
+
+[node name="naturePack_0172" parent="Enviroment" unique_id=2021518870 instance=ExtResource("2_a7u0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4666767, -1.7499981, 15.611074)
+
+[node name="naturePack_0212" parent="Enviroment" unique_id=1365364880 instance=ExtResource("3_qhub5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3236914, -1.7499981, -7.024981)
+
+[node name="naturePack_0192" parent="Enviroment" unique_id=1479180952 instance=ExtResource("4_cuare")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.490528, -1.7499981, 13.476019)
+
+[node name="naturePack_0173" parent="Enviroment" unique_id=1625791134 instance=ExtResource("2_a7u0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.201113, -1.749999, -1.5852568)
+
+[node name="naturePack_0222" parent="Enviroment" unique_id=712007882 instance=ExtResource("5_a1huo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2298899, -1.7499981, -5.5944505)
+
+[node name="naturePack_0652" parent="Enviroment" unique_id=1912828487 instance=ExtResource("6_buhu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.425079, -1.7499981, 19.67462)
+
+[node name="naturePack_0662" parent="Enviroment" unique_id=759143490 instance=ExtResource("7_jj57x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7702055, -1.7499981, -3.893025)
