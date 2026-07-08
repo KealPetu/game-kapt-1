@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://cha6q4e20x4o0"]
+
+[ext_resource type="Script" uid="uid://b5qynf63u4y1w" path="res://Scripts/MainMenu.gd" id="1_853f1"]
+[ext_resource type="Texture2D" uid="uid://qwc12rs05nfp" path="res://Assets/UI/FONDO MENU.png" id="2_8saeu"]
+[ext_resource type="FontFile" uid="uid://dtqrurtklwsnu" path="res://Assets/UI/kenvector_future_thin.ttf" id="3_df05h"]
+[ext_resource type="Texture2D" uid="uid://cf6i4x5o5egov" path="res://Assets/UI/buttonLarge.png" id="3_ghw46"]
+[ext_resource type="FontFile" uid="uid://hu4il2ytple2" path="res://Assets/UI/kenvector_future.ttf" id="4_ghw46"]
+
+[node name="MainMenu" type="Node" unique_id=896103405]
+script = ExtResource("1_853f1")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1625056810]
+
+[node name="Background" type="Control" parent="BackgroundLayer" unique_id=995927877]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundTexture" type="TextureRect" parent="BackgroundLayer/Background" unique_id=475703262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8saeu")
+expand_mode = 1
+
+[node name="MainOptionsLayer" type="CanvasLayer" parent="." unique_id=550466583]
+
+[node name="MainOptions" type="Control" parent="MainOptionsLayer" unique_id=2023208472]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainOptionsLayer/MainOptions" unique_id=1917144830]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.75
+offset_top = 32.0
+offset_right = 320.75
+offset_bottom = 129.99998
+grow_horizontal = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_df05h")
+bbcode_enabled = true
+text = "[font_size=64][color=WHITE][wave]Nuestro Juego[/wave][/color][/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsContainer" type="VBoxContainer" parent="MainOptionsLayer/MainOptions" unique_id=1478138093]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.75
+offset_top = -162.0
+offset_right = 146.75
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="MainOptionsLayer/MainOptions/OptionsContainer" unique_id=896099117]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "PLAY"
+icon = ExtResource("3_ghw46")
+icon_alignment = 1
+
+[node name="CreditsButton" type="Button" parent="MainOptionsLayer/MainOptions/OptionsContainer" unique_id=459627927]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "CREDITS"
+icon = ExtResource("3_ghw46")
+icon_alignment = 1
+
+[node name="ExitButton" type="Button" parent="MainOptionsLayer/MainOptions/OptionsContainer" unique_id=1302030049]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "EXIT"
+icon = ExtResource("3_ghw46")
+icon_alignment = 1
+
+[node name="CreditsLayer" type="CanvasLayer" parent="." unique_id=939194258]
+visible = false
+
+[node name="CreditsPanel" type="Control" parent="CreditsLayer" unique_id=2045703302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CreditsLayer/CreditsPanel" unique_id=1650227543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsLabel" type="RichTextLabel" parent="CreditsLayer/CreditsPanel/Panel" unique_id=2009417384]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -354.5
+offset_right = 474.0
+offset_bottom = 354.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_ghw46")
+theme_override_fonts/bold_font = ExtResource("4_ghw46")
+bbcode_enabled = true
+text = "[font_size=96] [b] Creadores: [/b] [/font_size]
+[font_size=64][wave amp=50 freq=2]- Henry Ludeña [/wave]
+[wave amp=50 freq=10]- Kevin Peñafiel [/wave][/font_size]
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="CreditsLayer/CreditsPanel/Panel" unique_id=1081431763]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -80.0
+offset_right = 34.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "<- BACK"
+icon = ExtResource("3_ghw46")
+icon_alignment = 1
