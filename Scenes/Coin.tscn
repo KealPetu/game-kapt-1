@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dk04687sfs345" path="res://Assets/Models/coin.glb" id="1_qrc3l"]
 [ext_resource type="Script" uid="uid://bw4dr3o2ygl5h" path="res://Scripts/Coin.gd" id="2_somhs"]
-[ext_resource type="AudioStream" uid="uid://cthbtcs42x1rj" path="res://Assets/Audio/pickupCoin.wav" id="3_wjfxq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qrc3l"]
 size = Vector3(2.518367, 0.313916, 2.518367)
@@ -10,13 +9,10 @@ size = Vector3(2.518367, 0.313916, 2.518367)
 [node name="Coin" unique_id=386511312 instance=ExtResource("1_qrc3l")]
 script = ExtResource("2_somhs")
 
-[node name="CollisionArea" type="Area3D" parent="Plane" parent_id_path=PackedInt32Array(1310327566) index="0" unique_id=364948915]
+[node name="CollisionArea" type="Area3D" parent="Plane" parent_id_path=PackedInt32Array(1544583886) index="0" unique_id=364948915]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01811552, 0, -1.9692875)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/CollisionArea" index="0" unique_id=1685523923]
 shape = SubResource("BoxShape3D_qrc3l")
-
-[node name="CoinPickedSFX" type="AudioStreamPlayer" parent="." index="1" unique_id=891329526]
-stream = ExtResource("3_wjfxq")
 
 [connection signal="body_entered" from="Plane/CollisionArea" to="." method="_on_collision_area_body_entered"]

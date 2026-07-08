@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dsh4pvqqgrj0b"]
+
+[ext_resource type="Script" uid="uid://crmi37g6gnoxy" path="res://Singletons/AudioManager.gd" id="1_bss8u"]
+[ext_resource type="AudioStream" uid="uid://cthbtcs42x1rj" path="res://Assets/Audio/pickupCoin.wav" id="2_qa3ht"]
+
+[node name="AudioManager" type="Node" unique_id=2032219967]
+script = ExtResource("1_bss8u")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=622374233]
+stream = ExtResource("2_qa3ht")

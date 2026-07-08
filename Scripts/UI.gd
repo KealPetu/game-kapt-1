@@ -8,9 +8,10 @@ extends CanvasLayer
 func _ready() -> void:
 	fps_updater_timer.timeout.connect(update_fps_text_label)
 	fps_updater_timer.start(1.0)
+	EventBus.score_changed.connect(_on_score_updated)
 
-func _process(delta: float) -> void:
-	score_label.text = "Score: " + str(GameManager.score)
+func _on_score_updated() -> void:
+	score_label.text = "Score: " + str(ScoreManager.score)
 
 func update_fps_text_label() -> void:
 	fps_label.text = "FPS: " + ("%.2f" % Engine.get_frames_per_second())

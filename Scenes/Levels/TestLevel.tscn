@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dsbavickrgd64" path="res://Assets/Models/Enviroment/naturePack_014.glb" id="1_1mv4x"]
 [ext_resource type="Script" uid="uid://dn2ajg5242r43" path="res://Scripts/CoinSpawner.gd" id="1_a7u0l"]
-[ext_resource type="PackedScene" uid="uid://bygi8kqhpecn7" path="res://Scenes/Coin.tscn" id="1_ss4xl"]
 [ext_resource type="PackedScene" uid="uid://b8m7p7g443u10" path="res://Assets/Models/Enviroment/naturePack_017.glb" id="2_a7u0l"]
 [ext_resource type="PackedScene" uid="uid://cpxtnppwp6svr" path="res://Assets/Models/Enviroment/naturePack_021.glb" id="3_qhub5"]
 [ext_resource type="PackedScene" uid="uid://euneys0k6kqv" path="res://Assets/Models/Enviroment/naturePack_019.glb" id="4_cuare"]
@@ -45,12 +44,11 @@ omni_range = 25.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -24)
 omni_range = 25.0
 
-[node name="Coins" type="Node3D" parent="." unique_id=1852524767]
+[node name="CoinSpawner" type="Node3D" parent="." unique_id=1852524767]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.9999999, 0, 0.9999999, -4.3711385e-08, 0, 0, 4)
 script = ExtResource("1_a7u0l")
-coin_scene = ExtResource("1_ss4xl")
 
-[node name="CoinSpawnTimer" type="Timer" parent="Coins" unique_id=1576227471]
+[node name="CoinSpawnTimer" type="Timer" parent="CoinSpawner" unique_id=1576227471]
 
 [node name="Enviroment" type="Node3D" parent="." unique_id=913369016]
 
