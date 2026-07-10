@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bwxk6ehjrqy6q"]
 
+[ext_resource type="Script" uid="uid://ciamjf36j30fs" path="res://Scripts/Game.gd" id="1_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://myxgsxqpch8v" path="res://Scenes/Player.tscn" id="1_gl6un"]
 [ext_resource type="Texture2D" uid="uid://dcvxd4byj0k2g" path="res://Assets/Textures/Sky.png" id="1_kldst"]
 [ext_resource type="PackedScene" uid="uid://dqyqk1ioyetxq" path="res://Scenes/Levels/TestLevel.tscn" id="2_j5yw3"]
@@ -22,6 +23,7 @@ font_size = 32
 font_size = 32
 
 [node name="Game" type="Node" unique_id=877371854]
+script = ExtResource("1_b2bpf")
 
 [node name="World" type="Node3D" parent="." unique_id=266502106]
 
