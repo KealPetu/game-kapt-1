@@ -6,20 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://cf6i4x5o5egov" path="res://Assets/UI/buttonLarge.png" id="3_ghw46"]
 [ext_resource type="FontFile" uid="uid://hu4il2ytple2" path="res://Assets/UI/kenvector_future.ttf" id="4_ghw46"]
 
-[node name="MainMenu" type="Node" unique_id=896103405]
-script = ExtResource("1_853f1")
-
-[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1625056810]
-
-[node name="Background" type="Control" parent="BackgroundLayer" unique_id=995927877]
+[node name="MainMenu" type="Control" unique_id=809344932]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_853f1")
 
-[node name="BackgroundTexture" type="TextureRect" parent="BackgroundLayer/Background" unique_id=475703262]
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=475703262]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,17 +25,7 @@ grow_vertical = 2
 texture = ExtResource("2_8saeu")
 expand_mode = 1
 
-[node name="MainOptionsLayer" type="CanvasLayer" parent="." unique_id=550466583]
-
-[node name="MainOptions" type="Control" parent="MainOptionsLayer" unique_id=2023208472]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MainOptionsLayer/MainOptions" unique_id=1917144830]
+[node name="GameTitle" type="RichTextLabel" parent="." unique_id=1917144830]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -56,7 +42,7 @@ text = "[font_size=64][color=WHITE][wave]Nuestro Juego[/wave][/color][/font_size
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OptionsContainer" type="VBoxContainer" parent="MainOptionsLayer/MainOptions" unique_id=1478138093]
+[node name="OptionsContainer" type="VBoxContainer" parent="." unique_id=1478138093]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,7 +56,7 @@ offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="MainOptionsLayer/MainOptions/OptionsContainer" unique_id=896099117]
+[node name="PlayButton" type="Button" parent="OptionsContainer" unique_id=896099117]
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -79,7 +65,7 @@ text = "PLAY"
 icon = ExtResource("3_ghw46")
 icon_alignment = 1
 
-[node name="CreditsButton" type="Button" parent="MainOptionsLayer/MainOptions/OptionsContainer" unique_id=459627927]
+[node name="CreditsButton" type="Button" parent="OptionsContainer" unique_id=459627927]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -88,7 +74,7 @@ text = "CREDITS"
 icon = ExtResource("3_ghw46")
 icon_alignment = 1
 
-[node name="ExitButton" type="Button" parent="MainOptionsLayer/MainOptions/OptionsContainer" unique_id=1302030049]
+[node name="ExitButton" type="Button" parent="OptionsContainer" unique_id=1302030049]
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -97,18 +83,7 @@ text = "EXIT"
 icon = ExtResource("3_ghw46")
 icon_alignment = 1
 
-[node name="CreditsLayer" type="CanvasLayer" parent="." unique_id=939194258]
-visible = false
-
-[node name="CreditsPanel" type="Control" parent="CreditsLayer" unique_id=2045703302]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="CreditsLayer/CreditsPanel" unique_id=1650227543]
+[node name="CreditsPanel" type="Panel" parent="." unique_id=1650227543]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,7 +91,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsLabel" type="RichTextLabel" parent="CreditsLayer/CreditsPanel/Panel" unique_id=2009417384]
+[node name="CreditsLabel" type="RichTextLabel" parent="CreditsPanel" unique_id=2009417384]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -139,7 +114,7 @@ text = "[font_size=96] [b] Creadores: [/b] [/font_size]
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackButton" type="Button" parent="CreditsLayer/CreditsPanel/Panel" unique_id=1081431763]
+[node name="BackButton" type="Button" parent="CreditsPanel" unique_id=1081431763]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
