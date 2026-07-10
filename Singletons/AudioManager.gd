@@ -9,7 +9,7 @@ func _on_coin_collected():
 	play_sfx("pickupCoin")
 
 func play_sfx(name: String):
-	var stream = load("res://Assets/Audio/%s.wav" % name)
+	var stream: AudioStreamWAV = load("res://Assets/Audio/%s.wav" % name)
 	sfx_player.stream = stream
 	randomize()
 	sfx_player.pitch_scale = randf_range(0.9, 1.1)
