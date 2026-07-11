@@ -1,5 +1,14 @@
 [gd_scene format=3 uid="uid://dlngkbps87n2y"]
 
+[ext_resource type="Texture2D" uid="uid://cf6i4x5o5egov" path="res://Assets/UI/buttonLarge.png" id="1_ntd6c"]
+[ext_resource type="Script" uid="uid://cnoypxikf34jl" path="res://Scripts/WinScene.gd" id="1_raalc"]
+[ext_resource type="Texture2D" uid="uid://b1u3ojied5olx" path="res://Assets/Textures/stars.png" id="2_2o7h2"]
+[ext_resource type="Shader" uid="uid://w7xg1hsa5brp" path="res://Assets/Shaders/WinScenePattern.gdshader" id="2_3m64s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2o7h2"]
+shader = ExtResource("2_3m64s")
+shader_parameter/speed = 0.1
+
 [node name="WinScreen" type="Control" unique_id=260887901]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +16,72 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_raalc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=585534231]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Pattern" type="TextureRect" parent="." unique_id=1242648016]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2o7h2")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2o7h2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=607519366]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -394.0
+offset_top = 60.0
+offset_right = 394.0
+offset_bottom = 282.49997
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[wave][center][font_size=64][rainbow]FELICITACIONES, ERES UN GANADOR![/rainbow][/font_size][/center][/wave]"
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1963163618]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -360.0
+offset_right = 102.0
+offset_bottom = -117.99988
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ButtonReturnMenu" type="Button" parent="Buttons" unique_id=1099265428]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "REGRESAR AL MENU PRINCIPAL"
+icon = ExtResource("1_ntd6c")
+text_overrun_behavior = 2
+icon_alignment = 1
+
+[node name="ButtonReturnGame" type="Button" parent="Buttons" unique_id=2013667348]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "REGRESAR AL JUEGO"
+icon = ExtResource("1_ntd6c")
+text_overrun_behavior = 2
+icon_alignment = 1
+
+[node name="ButtonReturnExit" type="Button" parent="Buttons" unique_id=827772839]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "SALIR DEL JUEGO"
+icon = ExtResource("1_ntd6c")
+text_overrun_behavior = 2
+icon_alignment = 1

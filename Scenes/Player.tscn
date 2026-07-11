@@ -2,8 +2,26 @@
 
 [ext_resource type="Script" uid="uid://cuwa7tj8006x5" path="res://Scripts/Player.gd" id="1_rpqav"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyqiw"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpqav"]
+next_pass = SubResource("StandardMaterial3D_kyqiw")
+diffuse_mode = 3
+specular_mode = 1
 albedo_color = Color(1, 0.30980393, 0.3019608, 1)
+roughness = 0.0
+stencil_mode = 1
+stencil_flags = 2
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_su5g8"]
 material = SubResource("StandardMaterial3D_rpqav")

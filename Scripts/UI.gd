@@ -11,7 +11,7 @@ func _ready() -> void:
 	EventBus.score_changed.connect(_on_score_updated)
 
 func _on_score_updated() -> void:
-	score_label.text = "Score: " + str(ScoreManager.score)
+	score_label.text = "Puntaje: " + str(ScoreManager.score)
 
 func update_fps_text_label() -> void:
 	fps_label.text = "FPS: " + ("%.2f" % Engine.get_frames_per_second())

@@ -9,4 +9,3 @@ func _ready():
 func _on_coin_collected():
 	score += 1
 	EventBus.score_changed.emit()
-	

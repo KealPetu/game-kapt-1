@@ -61,7 +61,7 @@ layout_mode = 0
 offset_top = 48.0
 offset_right = 102.0
 offset_bottom = 93.0
-text = "Score: "
+text = "Puntaje:"
 label_settings = SubResource("LabelSettings_b2bpf")
 
 [node name="FPSUpdaterTimer" type="Timer" parent="UI/Control" unique_id=129926129]
